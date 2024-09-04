@@ -1,0 +1,11 @@
+//CALLING A METHOD DEFINED INSIDE AN OBJECT
+const car={
+    carName:"TOYOTA",
+    carSits:10,
+    whatItDoes:(passenger,power)=>{
+        // passenger <= this.carSits ? console.log(`MY CAR SUPPORTS ${this.carSits} and has the power of ${power}`): console.log(`my car is overloaded ${power}`);
+        console.log(passenger, power)
+    },
+}
+const driving=(a,b)=>{car.whatItDoes(a,b)};
+driving(5,"30HS");

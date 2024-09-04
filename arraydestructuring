@@ -1,0 +1,88 @@
+//Array destructuring lets you unpack values from an array and assign them to variables in a single statement.
+//syntax const [variable1, variable2, ...rest] = array;
+//example:
+
+const fruits = ['apple', 'banana', 'cherry'];
+
+const [first, second, third] = fruits;
+console.log(first);  // Output: apple
+console.log(second); // Output: banana
+console.log(third);  // Output: cherry
+
+//Skipping Elements: You can skip elements in the array by leaving the corresponding positions empty
+
+const [first, , third] = fruits;
+console.log(first);  // Output: apple
+console.log(third);  // Output: cherry
+
+//2. Object Destructuring
+// Object destructuring allows you to extract properties from an object and assign them to variables.
+
+//Syntax:
+const { property1, property2, ...rest } = object;
+//EXAMPLE
+
+const person = {
+    name: 'John',
+    age: 30,
+    city: 'New York'
+};
+
+const { name, age } = person;
+console.log(name); // Output: John
+console.log(age);  // Output: 30
+// Renaming Variables: You can rename variables during destructuring by using the : syntax.
+
+// javascript
+
+const { name: firstName, age: yearsOld } = person;
+console.log(firstName); // Output: John
+console.log(yearsOld);  // Output: 30
+// Using Rest Syntax with Objects: The rest syntax can also be used with objects to capture remaining properties.
+
+
+const { name, ...rest } = person;
+console.log(name); // Output: John
+console.log(rest); // Output: { age: 30, city: 'New York' }
+// 3. Destructuring with Default Values
+// You can provide default values for variables in case the array or object does not contain the expected value.
+
+// Example with Arrays:
+
+const numbers = [1];
+const [a, b = 2] = numbers;
+console.log(a); // Output: 1
+console.log(b); // Output: 2 (default value)
+//Example with Objects:
+
+
+const settings = { theme: 'dark' };
+const { theme, fontSize = '16px' } = settings;
+console.log(theme);    // Output: dark
+console.log(fontSize); // Output: 16px (default value)
+// 4. Nested Destructuring
+// You can destructure nested arrays and objects by matching the structure.
+
+// Example with Nested Objects:
+
+const user = {
+    id: 1,
+    info: {
+        name: 'Alice',
+        location: {
+            city: 'Paris',
+            country: 'France'
+        }
+    }
+};
+
+const { info: { name, location: { city } } } = user;
+console.log(name); // Output: Alice
+console.log(city); // Output: Paris
+//Example with Nested Arrays:
+
+const coordinates = [1, [2, 3]];
+const [x, [y, z]] = coordinates;
+console.log(x); // Output: 1
+console.log(y); // Output: 2
+console.log(z); // Output: 3
